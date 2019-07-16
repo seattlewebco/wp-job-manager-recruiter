@@ -1,0 +1,12 @@
+{
+    "name": "seattlewebco/wp-job-manager-recruiter",
+    "description": "Library to assist integrating APIs to WP Job Manager",
+    "type": "library",
+    "authors": [
+        {
+            "name": "David Jensen",
+            "email": "david@seattlewebco.com"
+        }
+    ],
+    "require": {}
+}
