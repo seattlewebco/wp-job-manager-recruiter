@@ -52,7 +52,7 @@ class Client {
     public function sync_jobs() {
         $jobs = $this->adapter->sync_jobs();
 
-        WP_Job_Manager_JobAdder()->log->info( __( 'Synching jobs...', 'wp-job-manager-jobadder' ) );
+        Log::info( __( 'Synching jobs...', 'wp-job-manager-recruiter' ) );
 
         foreach ( $jobs as $job_postdata ) {
             $existing = $this->adapter->job_exists( $job_postdata['meta_input']['_jid'] );
@@ -62,11 +62,11 @@ class Client {
 
                 $job = wp_update_post( $job_postdata );
 
-                WP_Job_Manager_JobAdder()->log->info( sprintf( __( 'Updating job ID %s', 'wp-job-manager-jobadder' ), $job ) );
+                Log::info( sprintf( __( 'Updating job ID %s', 'wp-job-manager-recruiter' ), $job ) );
             } else {
                 $job = wp_insert_post( $job_postdata );
 
-                WP_Job_Manager_JobAdder()->log->info( sprintf( __( 'Inserting job ID %s', 'wp-job-manager-jobadder' ), $job ) );
+                Log::info( sprintf( __( 'Inserting job ID %s', 'wp-job-manager-recruiter' ), $job ) );
             }
         }
     }

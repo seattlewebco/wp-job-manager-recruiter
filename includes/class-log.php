@@ -28,7 +28,7 @@ class Log {
 	public static function info( $message, $details = array() ) {
 		$log = new Logger( 'wp-job-manager-' . WP_JOB_MANAGER_RECRUITER_SLUG );
 		$log->pushHandler( new StreamHandler( WP_JOB_MANAGER_JOBADDER_LOG, Logger::DEBUG ) );
-		$log->info( esc_html__( $message, 'wp-job-manager-' . WP_JOB_MANAGER_RECRUITER_SLUG ), (array) $details );
+		$log->info( esc_html__( $message, 'wp-job-manager-recruiter' ), (array) $details );
 	}
 
 
@@ -42,7 +42,7 @@ class Log {
 	public static function error( $message, $details = array() ) {
 		$log = new Logger( 'wp-job-manager-' . WP_JOB_MANAGER_RECRUITER_SLUG );
 		$log->pushHandler( new StreamHandler( WP_JOB_MANAGER_JOBADDER_LOG, Logger::DEBUG ) );
-		$log->error( esc_html__( $message, 'wp-job-manager-' . WP_JOB_MANAGER_RECRUITER_SLUG ), (array) $details );
+		$log->error( esc_html__( $message, 'wp-job-manager-recruiter' ), (array) $details );
 	}
 	
 }

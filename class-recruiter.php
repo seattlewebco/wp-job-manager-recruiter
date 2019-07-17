@@ -76,8 +76,18 @@ class Recruiter {
         $this->log            = new Log;
         $this->cron           = new Cron;
 
+        Log::error( 'test' );
+
+        $this->hooks();
+
         do_action_ref_array( 'wp_job_manager_recruiter_loaded', $this ); 
     
         return $this;
+    }
+
+
+    public function hooks() {
+        add_action( 'job_manager_' . WP_JOB_MANAGER_RECRUITER_SLUG . '_sync_jobs', array( $this->client, 'sync_jobs' ), 10 );
+        add_action( 'job_manager_' . WP_JOB_MANAGER_RECRUITER_SLUG . '_post_job_application', array( $this->client, 'post_job_application' ), 10, 3 );
     }
 }

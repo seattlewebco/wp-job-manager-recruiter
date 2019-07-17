@@ -66,7 +66,7 @@ class Applications {
                     }
                 }
 
-                $value = apply_filters( 'job_manager_application_field_value', $field['value'], $field );
+                $value = apply_filters( 'job_manager_' . WP_JOB_MANAGER_RECRUITER_SLUG . '_application_field_value', $field['value'], $field );
 
                 if ( is_array( $key ) || substr( $field[ WP_JOB_MANAGER_RECRUITER_SLUG ], -2, 2 ) == '[]' ) {
                     $key[] = $value;
@@ -76,10 +76,7 @@ class Applications {
             }
 
             if ( ! empty( $fields ) ) {
-                /**
-                 * @var array   $fields
-                 */
-                $posted = WP_Job_Manager_JobAdder()->client->post_job_application( $job_id, $application_id, $fields );
+                do_action( 'job_manager_' . WP_JOB_MANAGER_RECRUITER_SLUG . '_post_job_application', $job_id, $application_id, $fields );
             }
         }
     }
