@@ -76,8 +76,6 @@ class Recruiter {
         $this->log            = new Log;
         $this->cron           = new Cron;
 
-        Log::error( 'test' );
-
         $this->hooks();
 
         do_action_ref_array( 'wp_job_manager_recruiter_loaded', $this ); 
