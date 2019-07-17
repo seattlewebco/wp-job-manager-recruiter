@@ -6,7 +6,7 @@
  */
 
 
-namespace SeattleWebCo\WPJobManager\Recruiter;
+namespace WPJobManagerRecruiter;
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;

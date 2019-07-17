@@ -6,7 +6,7 @@
  */
 
  
-namespace SeattleWebCo\WPJobManager\Recruiter;
+namespace WPJobManagerRecruiter;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

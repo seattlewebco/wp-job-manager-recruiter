@@ -17,6 +17,6 @@
         "phpunit/phpunit": "8.0.5"
     },
     "autoload": {
-        "psr-4": {"SeattleWebCo\\WPJobManager\\Recruiter\\": "src"}
+        "psr-4": {"WPJobManagerRecruiter\\": "src"}
     }
 }
