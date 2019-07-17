@@ -13,15 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-require_once 'includes/interface-adapter.php';
-require_once 'includes/class-client.php';
-require_once 'includes/class-applications.php';
-require_once 'includes/class-webhooks.php';
-require_once 'includes/class-log.php';
-require_once 'includes/class-exception.php';
-require_once 'includes/class-cron.php';
-
-
 class Recruiter {
 
     /**
